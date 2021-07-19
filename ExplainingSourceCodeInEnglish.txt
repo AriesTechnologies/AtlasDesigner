@@ -1,0 +1,130 @@
+______________________________________________________________________
+Things to Note Before Reading:
+______________________________________________________________________
+
+This program works with any photo of your choosing as long as it is in
+the Image folder inside the projects folder. 
+
+Also you might want to have this file and the SourceCodeAsText file open
+at the same time so you can see the sections and see the code for
+yourself so maybe you can start connecting some commands to exact
+functions that take place while the application is running.
+
+The classes sections gets in to some really complex details so I'm going to
+explain it in a super watered down version so I can try not to confuse
+you too much.
+
+Lastly anything that starts with # --- and ends with --- # is titles of
+sections which is what we will be following from the other text file.
+
+______________________________________________________________________
+Translation Starts Now:
+______________________________________________________________________
+
+Section 1: # --- Imports --- #
+
+This section is where I import all my critical extra "tools"
+like operating system commands, pygame (graphics) functions, and python system
+commands. Last line initializes pygame for me so I can use it.
+
+Section 2: # --- Definitions --- #
+
+This section is where I store some functions that I have made to help
+me out with this project. 
+
+Text_Objects is a function that converts the font to a surface that
+can be shown on the screen.
+
+message_to_screen is a function that grabs the surface from Text_Objects,
+places it at the correct coordinates, and proceeds to place the text
+on screen. Since the screen has not been refreshed it will not appear
+on the screen.
+
+Section 3: # --- Fill Class --- #
+
+The "Fill Class" defines all the different types of fill functions that are
+used throughout the application.
+
+The Fill classes color_fill function fills the screen with the color that is
+chosen by the user.
+
+The Fill classes autofill function creates the image out of the word that
+was chosen on startup. It take the infomation from Text_Objects and creates the
+text as a "image" then copies it everywhre inside the boundaries of the main
+image. It also decides on the color of the text image by finding the average color
+of the main image where the text image will be located.
+
+Section 4: # --- Commands Class --- #
+
+The "Commands Class" defines all the commands and the command compiler. 
+
+The Commands class __init__ creates the command dictionary.
+
+The Commands class get_commands function is used by the Atlas Designer Compiler
+that is built into the program to retrieve certain attributes of the program
+that you don't have access to.
+
+Section 5: # --- App Class --- #
+
+The "App class" generates and creates everything used by the program
+that was created by me. When I activate this class it automatically
+creates all the variables/entities that are under the __init__
+function. This also creates a reference to font that I'm using and it creates
+a reference to the Fill class so I can use it while the application is running.
+
+The App classes settings function is used to create the Image and Window
+variables used by Pygame to create a window for the program.
+
+The App classes resize function basically does what I called it. It resizes
+the image you are using to fit the window size.
+
+The App classes get_color_surface function grabs and returns a blend of
+colors in that area to create the fonts color.
+
+The App classes fill function decides what kind of fill from the Fill class to
+use.
+
+The App classes key_update checks for keys being pressed.
+
+The App classes update function checks if any of the listed keys are being 
+pressed it changes the texts size. Then proceeds to clear the list of text
+that was being displayed, clears the screen, and lastly runs the fill function
+with the new text_size (but doesn't display or draw it to the screen).
+
+The App classes redisplay function actually draws the text or image to the screen
+and finally refreshes the display so you can see it.
+
+Section 6: # --- Main Loop --- #
+
+The __main__ function is as stated the main function that
+causes all the other App classes functions to happen. It also checks
+to see if the special Window X button has been clicked. Lastly it
+runs at a specific frames a second so the computer doesn't run the code
+faster than it should (controls screen refresh rate as well as many other
+important attributes to the program).
+
+Section 7: # --- Application Loop -- #
+
+The application "loop" creates an instance of the App class and everything
+inside that class and also starts the main loop that is stated above.
+
+Section 8: # --- Quit Function --- #
+
+The quit function does what it says, it quits the program after the
+Window X button has been clicked or the Application Loop stops running
+for any reason. 
+
+______________________________________________________________________
+Translation stops now
+______________________________________________________________________
+
+Thanks for reading and if you got all the way through I'm sure you are
+throughly impressed with how this program operates. This wasn't too
+hard to make honestly but it did force me to use some new commands
+that I didn't know came with the Pygame extension. Luckily the creators
+of the Pygame extension were nice enough to include documentation on
+commands that come with the extension so I was able to find how the
+commands worked and what information it needed in the parentheses so
+it would work and not give me a huge error in my code. Thanks again for
+letting me do this as a project it was really fun and I hope I can do something
+like it again at some point in Graphic Design.
